@@ -3,8 +3,9 @@
 import os
 import MapAssessTools
 
+bamdir = os.getcwd()
 bamfiles = [i for i in os.listdir(bamdir) if i.endswith("bam")]
-ref_file = ""
+ref_file = [i for i in os.listdir(fadir) if i.endswith(".fa") or i.endswith('.fasta')][0]
 
 for bamfile in bamfiles:
     base = os.path.basename(bamfile).rsplit('.', 1)[0]
